@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>Генератор паролей</title>
+</head>
+<body>
+  <div class="password-generator">
+    <h1>
+      <span class="strong">Надежный</span> генератор паролей
+    </h1>
+    <p>Создай пароль</p>
+
+    <div class="password-display">
+      <input type="text" id="password" readonly>
+      <div class="password-display__btns">
+        <button type="button" class="password-display__copy-btn">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+        
+        <button type="button" class="password-display__generate-btn">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="options">
+      <label>
+        <input type="checkbox" id="lowercase" checked>
+        <span></span>
+        <span>abc</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="uppercase" checked>
+        <span></span>
+        <span>ABC</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="numbers" checked>
+        <span></span>
+        <span>123</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="symbols" checked>
+        <span></span>
+        <span>@#!</span>
+      </label>
+    </div>
+
+    <div class="password-length">
+      <span>Длина пароля: <span id="length-value">4</span></span>
+
+      <div class="password-length__wrapper">
+        <button type="button" id="decrease-btn" class="password-length__btn password-length__btn--minus">-</button>
+        <input type="range" id="length-slider" min="4" max="32" value="4">
+        <button type="button" id="increase-btn" class="password-length__btn password-length__btn--plus">+</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -45,3 +45,27 @@ copyBtn.addEventListener('click', () => {
     alert('Пароль скопирован в буфер обмена');
   }
 })
+
+increaseBtn.addEventListener('click', () => {
+  lengthSlider.value = Number(lengthSlider.value) + 1;
+  if (lengthValue.innerText <= 32) {
+    lengthValue.innerText = Number(lengthValue.innerText) + 1;
+  }
+
+  if (lengthValue.innerText > 32) {
+    lengthValue.innerText = 32;
+    alert('Невозможно сгенерировать пароль больше 32 символов')
+  }
+});
+
+decreaseBtn.addEventListener('click', () => {
+  lengthSlider.value = Number(lengthSlider.value) - 1;
+  if (lengthValue.innerText >= 4) {
+    lengthValue.innerText = Number(lengthValue.innerText) - 1;
+  }
+
+  if (lengthValue.innerText < 4) {
+    lengthValue.innerText = 4;
+    alert('Невозможно сгенерировать пароль меньше 4 символов')
+  }
+});

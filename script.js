@@ -15,7 +15,7 @@ generateBtn.addEventListener('click', () => {
 
   const password = generatePassword(length, useLowerCase, useUppercase, useNumbers, useSymbols);
   passwordField.value = password;
-})
+});
 
 function generatePassword(length, useLowerCase, useUppercase, useNumbers, useSymbols) {
   const lowercase = 'abcdefghijklmnopqrstuvwxyz';
@@ -37,14 +37,14 @@ function generatePassword(length, useLowerCase, useUppercase, useNumbers, useSym
     password += passwordChars[randomIndex];
   }
   return password;
-}
+};
 
 copyBtn.addEventListener('click', () => {
   if (passwordField.value) {
     navigator.clipboard.writeText(passwordField.value);
     alert('Пароль скопирован в буфер обмена');
   }
-})
+});
 
 increaseBtn.addEventListener('click', () => {
   lengthSlider.value = Number(lengthSlider.value) + 1;
@@ -66,6 +66,10 @@ decreaseBtn.addEventListener('click', () => {
 
   if (lengthValue.innerText < 4) {
     lengthValue.innerText = 4;
-    alert('Невозможно сгенерировать пароль меньше 4 символов')
+    alert('Невозможно сгенерировать пароль меньше 4 символов');
   }
+});
+
+lengthSlider.addEventListener('input', () => {
+  lengthValue.innerText = lengthSlider.value;
 });

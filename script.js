@@ -38,3 +38,10 @@ function generatePassword(length, useLowerCase, useUppercase, useNumbers, useSym
   }
   return password;
 }
+
+copyBtn.addEventListener('click', () => {
+  if (passwordField.value) {
+    navigator.clipboard.writeText(passwordField.value);
+    alert('Пароль скопирован в буфер обмена');
+  }
+})
